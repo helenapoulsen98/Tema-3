@@ -1,0 +1,900 @@
+
+/*----------------- Kodet af Mikkel Lundorf Hjorth ----------------- */
+*{
+ box-sizing: border-box;
+}
+
+/* Ul elementet hvor vores desktop nav ligger i, skal ikke vises på mobil. Den er derfor
+sat til display none fra start. */
+header ul{
+  display: none;
+}
+
+/* jeg smider baggrunds farve på html samt en width og height da det skal gælde for hele siden */
+html{
+  background-color: white;
+  min-height: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+/* Jeg laver en header jeg gør fixed, således den følger brugeren når han scroller ned på siden.
+Jeg giver den et Z-index højere end det andet på siden, således at headeren ligger øverst.
+Til sidst giver jeg den farve, width og paddin. Jeg giver den top 0, så den ligger sig helt oppe i toppen. */
+header{
+  position: fixed;
+  z-index: 3;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  padding-bottom: 0.5em;
+}
+
+/* jeg tager decoration af linkene */
+header a{
+ text-decoration: none;
+}
+
+/* her definerer jeg width, height og margin på body */
+body{
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+}
+/* Her er en class lavet til vores side nav til mobil. Den er sat til display:none by default
+og så bliver height, width, top og left defineret for at placere den og bestemme størrelsen.
+Jeg giver også den et z-index på 3, så den ligger sig over resten af siden, når den bliver aktiveret.
+Farven og padding bliver også defineret her. */
+.sidenav {
+    display: none;
+    height: 60%;
+    width: 60%;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    background-color: rgb(55, 55 ,55);
+    overflow-x: hidden;
+    padding-top: 60px;
+    border-radius: 0.5em;
+}
+/* heri har jeg burger-menu iconet. Det bliver positioneret med right, margin og absolute.
+Og så bliver størrelsen defineret med font size.*/
+header span{
+  right: 2.5%;
+  font-size: 40px;
+  margin-left: 50%;
+  position: absolute;
+}
+/* Her styler jeg vores Empire logo der ligger oppe i headeren*/
+.logo{
+  max-width: 10em;
+  margin-left: 2.5%;
+  margin-top: 0.8em;
+}
+
+/* Her styles menu punkterne inde i side menu'en. Block for at få dem på hver linie.
+Der bliver defineret en font, samt colot og margin. Decoration bliver også taget af, da
+det jo er en menu og ikke links som sådan. */
+.sidenav a {
+    margin-left: 1em;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 160%;
+    display: block;
+}
+
+/* her hiver jeg bare fat i det ID der ellers bruges til at køre funktionen getElementByID,
+for at smide det over i højre side at skærmen. */
+#mySidenav{
+  margin-left: 40%;
+}
+
+/* her er der fat i det icon der bruges til at lukke vores side menu igen. */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 360%;
+    margin-left: 50px;
+}
+
+/* Her hiver jeg fat i et figure element fra forsiden og styler det. Jeg lavede et
+figure element for at have billeder og h1 samlet. */
+body figure{
+position: relative;
+margin-top: 4em;
+margin-left: 0%;
+margin-right: 0%;
+}
+
+/* Her styles den h1 jeg bruger på forsiden. Den ligger ovenpå det første billede på forsiden.
+Derfor har jeg givet detn Z-index 2. */
+
+.mikh1{
+  z-index: 2;
+  font-size: 120%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  opacity: 1;
+  right: 0;
+  font-family: 'Libre Baskerville', serif;
+  color: white;
+  text-align: center;
+  text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
+}
+
+/* Hackfix for at kunne style h2 uden at stylle alle h2'ere */
+div>h2{
+  margin-top: -2em;
+}
+
+.mikh2{
+  margin-top: -5em;
+  display: block;
+  margin-bottom: -0.2em;
+  font-size: 100%;
+  font-family: 'Oswald', sans-serif;
+  margin-left: 2.5%;
+}
+/* Her styles billedet under h1'eren */
+.forpic1{
+  margin-top: 1.5em;
+  z-index: 1;
+  width: 100%;
+}
+/* her styles endnu et billede til forsiden */
+.forpic2{
+  max-width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: -3em;
+}
+
+
+/* Her er 2 billeder som ikke vises på mobil. Derfor er de display: none. Senere bliver de
+aktiveret via media Q's og vil blive vist.*/
+.forpic3{
+  display: none;
+}
+.forpic4{
+  display: none;
+}
+/*endnu et billede til forsiden styles */
+.forpic5{
+  max-width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+.leveringp{
+  margin-left: 2.5%;
+  font-family: 'Oswald', sans-serif;
+}
+
+/* Her definerer jeg width på article */
+article{
+  width: 100%;
+}
+
+/* Her definerer jeg størrelsen på den youtube video jeg har implementeret,
+samt positionerer den med margins */
+article iframe{
+  width: 95%;
+  height: 15em;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-radius: 0.4em;
+  border: none;
+}
+
+/* her har jeg en h2 jeg styler til forsiden*/
+h2{
+  font-size: 100%;
+  font-family: 'Oswald', sans-serif;
+  margin-left: 2.5%;
+  margin-bottom: -0.5em;
+}
+
+
+/* Her er noget p element i body'en på forsiden. */
+body article p{
+  font-family: 'Oswald', sans-serif;
+  text-decoration: none;
+  color: black;
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+/* Her er et billede der ligger nede i article. Det ligger indeni en figure igen */
+body article figure img{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+/* class til den 2. figure for at kunne hive fat i den nemt */
+.fig2{
+  width: 100%;
+}
+/* her styles footeren nede i buden. */
+body footer{
+  position: absolute;
+  padding-top: 0.5em;
+  background-color: black;
+  height: 6em;
+  width: 100%;
+}
+
+/* en class for at få "Åbningstider" på en linie for sig */
+.openhours{
+  display: inline-block;
+  margin-left: 2.5em;
+}
+/* Den var oprindeligt brugt til at style mandag individuelt, men er nu brugt til at placere
+p elementerne i footeren. */
+.mandag{
+  margin-left: 2.5em;
+  margin-right: 1em;
+}
+/* Her styles p elementerne i footeren */
+body footer p{
+  color: white;
+  margin-right: 1em;
+  margin-left: 2.5em;
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50%;
+}
+
+/* ------------------------- Mikkel Kode slut --------------------------- */
+
+/* ------------------ Her starter MARCs style*/ -----------------------------
+/*Det her er teksten på showroom billedet*/
+.titleshowroom{
+   position: absolute;
+   color: white;
+   text-align: center;
+   text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
+   font-size: 120%;
+   margin-top: 8em;
+   width:90%;
+   margin-left: 5%;
+   margin-right: 5%;
+   font-family:'Libre Baskerville', serif;
+}
+
+
+/*det her er de to billeder og tekst*/
+.garantishowroom{
+   max-width: 100%;
+   margin-top: 7em;
+}
+
+.garantishowroom img{
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+
+.garantishowroom p{
+   font-family:'Libre Baskerville', serif;
+   margin-left:5%;
+   margin-right:5%;
+}
+
+.garanti{
+  max-width: 100%;
+  margin-top: 2em;
+}
+
+.garanti img{
+  width: 90%;
+  margin-top: -2em;
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+
+.garanti p{
+  font-family:'Libre Baskerville', serif;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom: 3em;
+}
+
+.infop{
+   font-family:'Libre Baskerville', serif;
+   margin-left: 5%;
+   margin-right:5%;
+   width:90%;
+   text-align: left;
+}
+
+.infographic{
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+/* ------- Marks Kode Slut ---------------- */
+
+/* ---------------------- Helenas kode -------------------*/
+.produkter h1, h4{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 150%;
+  margin-top: 4em;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.produkter2{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 150%;
+  margin-top: 10em;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.overskrift{
+  font-family: 'Libre Baskervile', serif;
+  font-size: 150%;
+  margin-top: 4em;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* Første stol */
+.box1{
+  width: 100%;
+  min-height: 50%;
+}
+
+.produkt1{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  display: inline-block;
+  max-height: 15%;
+}
+
+.box1 h3{
+  font-size: 170%;
+  width: 25%;
+  position: absolute;
+  margin-top: -37%;
+  margin-left: 45%;
+}
+
+.box1 p{
+  width: 50%;
+  margin-left: 45%;
+  margin-top: -30%;
+}
+/* første stol slut */
+
+/* Anden stol */
+.box2{
+  width: 100%;
+  min-height: 50%;
+}
+.produkt2{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  margin-top: 15%;
+  display: inline-block;
+  max-height: 15%;
+}
+
+  .box2 h3{
+    font-size: 170%;
+    width: 25%;
+    position: absolute;
+    margin-top: -37%;
+    margin-left: 45%;
+  }
+  .box2 p{
+    width: 50%;
+    margin-left: 45%;
+    margin-top: -30%;
+  }
+/* anden stol slut*/
+
+/*Tredje stol*/
+.box3{
+  width: 100%;
+  min-height: 50%;
+}
+
+.produkt3{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  margin-top: 25%;
+  display: inline-block;
+  max-height: 15%;
+}
+
+.box3 h3{
+  font-size: 170%;
+  width: 25%;
+  position: absolute;
+  margin-top: -45%;
+  margin-left: 45%;
+}
+.box3 p{
+  width: 50%;
+  margin-left: 45%;
+  margin-top: -37%;
+}
+/* Tredje stol slut */
+
+/* Fjerde stol*/
+.box4{
+  width: 100%;
+  min-height: 50%;
+}
+
+.produkt4{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  margin-top: 30%;
+  margin-bottom: 20%;
+  display: inline-block;
+  max-height: 15%;
+}
+
+.box4 h3{
+  font-size: 170%;
+  width: 25%;
+  position: absolute;
+  margin-top: -57%;
+  margin-left: 45%;
+}
+
+.box4 p{
+  width: 50%;
+  margin-left: 45%;
+  margin-top: -47%;
+}
+/* Fjerde stol slut*/
+
+/* Første sofa */
+.box5{
+  width: 100%;
+  min-height: 50%;
+}
+
+.produkt5{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  margin-top: 1em;
+  margin-bottom: 40%;
+  display: inline-block;
+  max-height: 15%;
+}
+
+.box5 h3{
+  font-size: 170%;
+  width: 25%;
+  position: absolute;
+  margin-top: -65%;
+  margin-left: 45%;
+}
+
+.box5 p{
+  width: 50%;
+  margin-left: 45%;
+  margin-top: -55%;
+}
+/* Første Sofa*/
+
+/* Anden Sofa*/
+.box6{
+  width: 100%;
+  min-height: 50%;
+}
+
+.produkt6{
+  width: 40%;
+  border: solid black 1px;
+  margin-left: 2.5%;
+  margin-right: 0;
+  margin-top: 1em;
+  margin-bottom: 40%;
+  display: inline-block;
+  max-height: 15%;
+}
+
+.box6 h3{
+  font-size: 170%;
+  width: 25%;
+  position: absolute;
+  margin-top: -61%;
+  margin-left: 45%;
+}
+
+.box6 p{
+  width: 50%;
+  margin-left: 45%;
+  margin-top: -52%;
+
+}
+/* Anden sofa slut*/
+
+
+/* -------------- Helenas kode slut ---------*/
+
+
+
+/* -----------------------Media Q's-----------------------------*/
+/* her ændrer jeg bare størrelsen på p elementerne i footeren og footeren, så de fylder mere, som der
+bliver mere plads. */
+@media screen and (min-width: 382px){
+body footer p{
+  font-size: 60%;
+  }
+
+  body footer{
+    height: 6.5em;
+
+  }
+
+}
+
+/* ------------------------------------------*/
+/* samme som ovenstående break */
+@media screen and (min-width: 503px){
+body footer p{
+  font-size: 90%;
+  }
+  body footer{
+    height: 12em;
+  }
+}
+/* ------------------------------------------*/
+
+@media screen and (min-width: 700px){
+/* her bliver youtube videoen justeret i størrelsen, så det passer bedre med den nu større skærm*/
+  article iframe{
+    width: 60%;
+    height: 25em;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+/* her tyles lidt på sidenav så den passer bedre på en større skærm */
+  .sidenav {
+      display: none;
+      height: 60%;
+      width: 30%;
+      position: fixed;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      background-color: rgba(55, 55 ,55, 1);
+      overflow-x: hidden;
+      padding-top: 60px;
+      border-radius: 0.5em;
+  }
+
+#mySidenav{
+  margin-left: 70%;
+  }
+  body footer p{
+    font-size: 120%;
+  }
+
+  body footer{
+    height: 12em;
+
+
+  }
+}
+
+/* ------------------------------------------------------ */
+
+@media screen and (min-width: 1000px){
+
+  .mikh2{
+    font-size: 150%;
+  }
+
+.garanti{
+  width: 80%;
+  margin-top: -2em;
+  margin-left: 10%;
+  margin-right: 0%;
+  }
+.garantishowroom {
+     width: 80%;
+     margin-left: 10%;
+     margin-right: 10%;
+     margin-bottom: 5em;
+  }
+
+  .infop{
+     margin-left: 15%;
+     margin-right:15%;
+     width:70%;
+
+  }
+.infographic{
+     width: 70%;
+     margin-left: 15%;
+     margin-right: 15%;
+  }
+
+  .box6{
+  min-height: 70%;
+  }
+
+/* yt video justeres igen */
+  article iframe{
+    width: 70%;
+    height: 25em;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+  article h2{
+    font-size: 150%;
+}
+
+header{
+  width: 100%;
+}
+/* så bliver vores desktop navigation aktiveret. Så istedet for burger-menu'en
+har vi så en horizontal nav menu. */
+header ul{
+  text-align: center;
+  width: 80%;
+  display: inline-block;
+  margin-left: 0%;
+  display: inline-block;
+  list-style: none;
+}
+
+header ul li{
+  text-indent: -1em;
+  text-align: center;
+  width: 15%;
+  display: inline-block;
+}
+
+header ul li a{
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 1em;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 150%;
+}
+/* lir til dem med mus */
+header ul li:hover{
+  background-color: grey;
+  border-radius: 1em;
+}
+/* burger menu iconet fjernes*/
+span{
+  display: none;
+}
+
+  body figure{
+    position: relative;
+    width: 100%;
+  }
+  body figure h1{
+    margin-left: -60%;
+  }
+/* nye billeder aktiveres og allerede existerende justeres til den nye
+skærmstørrelse */
+.forpic1{
+z-index: 1;
+width: 40%;
+margin-left: 2.5%;
+  }
+.forpic4{
+display: inline-block;
+width: 0.9%;
+margin-bottom: 1.4em;
+margin-left: 7%;
+}
+
+.forpic3{
+  display: inline-block;
+  float:right;
+  width: 40%;
+  margin-right: 2.5%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+body footer{
+  height: 16em;
+}
+
+body footer p{
+  font-size: 150%;
+}
+
+}
+
+/* ------------------------------------------------------ */
+
+@media screen and (min-width: 1300px){
+/*------------------- Marc fest -------------------- */
+  .garanti{
+    width: 60%;
+    margin-top: -2em;
+    margin-left: 20%;
+    margin-right: 20%;
+    }
+  .garantishowroom {
+       width: 60%;
+       margin-left: 20%;
+       margin-right: 20%;
+       margin-bottom: 5em;
+    }
+
+    .infop{
+       margin-left: 22.5%;
+       margin-right:22.5%;
+       width:55%;
+
+    }
+  .infographic{
+       width: 55%;
+       margin-left: 22.5%;
+       margin-right: 22.5%;
+    }
+
+    .box6{
+      min-height: 89%;
+    }
+/* her justeres bare på elementer fra 1000px til 13000px så de passer bedre */
+    article iframe{
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
+  }
+
+  article h2{
+    font-size: 150%;
+}
+header{
+  width: 100%;
+}
+
+header ul{
+  width: 60%;
+  display: inline-block;
+  margin-left: 10%;
+  display: inline-block;
+  list-style: none;
+}
+
+header ul li{
+  text-indent: -1em;
+  text-align: center;
+  width: 15%;
+  display: inline-block;
+}
+
+header ul li a{
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 1em;
+  font-family: 'Oswald', sans-serif;
+  color: black;
+  font-size: 150%;
+}
+
+header ul li:hover{
+  background-color: grey;
+  border-radius: 1em;
+}
+
+span{
+  display: none;
+}
+
+  body figure{
+    position: relative;
+    width: 100%;
+  }
+  body figure h1{
+    margin-left: -60%;
+  }
+
+.forpic1{
+z-index: 1;
+width: 40%;
+margin-left: 2.5%;
+  }
+.forpic4{
+display: inline-block;
+width: 0.9%;
+margin-bottom: 1.4em;
+margin-left: 7%;
+}
+
+.forpic3{
+  display: inline-block;
+  float:right;
+  width: 40%;
+  margin-right: 2.5%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+body footer{
+
+  height: 16em;
+}
+
+body footer p{
+  font-size: 150%;
+}
+}
+/*----------------------- Media Q's slut -------------------------------*/
+
+
+/* Catharine Simon kodning */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Styling af send knap */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* når musen henover skifter farve */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* baggrundsfarve og noget padding og font */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f;
+    padding: 50px;
+    font-family: 'Libre Baskerville', serif;
+    margin-top: 4em;
+}
+
+figure {
+  padding-bottom: 4em;
+}
+
+
+/* text på img */
+.h2kontakt {
+    padding-top: 55em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family:'Libre Baskerville', serif;
+    color: white;
+}
+/* ------------- Catharine Kode slut ----------------- */

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" type="text/css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+  <title>Empire!</title>
+  <link rel="icon" href="Keyicon.png">
+</head>
+
+
+
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="empire.png" alt="Living room">
+    </a>
+  <span onclick="openNav()">&#9776;</span>
+
+  <ul>
+    <li><a href="index.html">Hjem</a></li>
+    <li><a href="omos.html">Om os</a></li>
+    <li><a href="produkter.html">Produkter</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+  </ul>
+
+  </header>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Hjem</a>
+    <a href="omos.html">Om os</a>
+    <a href="produkter.html">Produkter</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+
+
+  <script>
+  function openNav() {
+      document.getElementById("mySidenav").style.display = "block";
+  }
+
+  function closeNav() {
+      document.getElementById("mySidenav").style.display = "none";
+  }
+  </script>
+
+
+  <!-- Kodet af Marc Petersen -->
+
+  <!-- Her starter indholdet-->
+  <!-- Dette er billedeteksten-->
+  <div class="titleshowroom"
+   <p>Kom ind og se vores Showroom!</p>
+  </div>
+
+  <!--Dette er indholdsheader-->
+  <div class="garantishowroom">
+   <p>Vi er stolte af at kunne byde jer indenfor i vores showroom. Vi har indrettet 250m2
+      med de nyeste kollektioner. Kom ind og bliv inspirreret over en kop kaffe og få en
+      snak med en af vores dygtige eksperter.
+  </p>
+   <img src="showroom.jpg" alt"showroom">
+  </div>
+
+  <div class="garanti">
+   <p>Hos Empire er det vigtigt for os, at vi er sikre på at du kommer hjem med
+      det helt perfekte møbel. Vi har derfor en særlig garantiordning der betyder
+      at du kan afprøve et møbel i en periode på 30 dage og frit returnere det, hvis ikke det lever op til dine forventninger. </p>
+   <img src="garanti.jpg" alt"garant">
+   <p> Ikke nok med prøveperioden, leverer vi også en udvidet garantiordning!
+     Vi ved med sikkerhed at vores møbler kan holde sig i generationer, men
+      skulle der alligevel opstå noget, lover vi at reparer alle skader i en periode på 20år.
+   </p>
+  </div>
+
+  <!-- infographic-->
+  <div>
+   <p class="infop">Den lange rejse hvert enkelt Empire møbel gennemgår
+   før det finder sit rette hjem</p>
+   <img class="infographic" src="Infographic.png" alt="infographic">
+  </div>
+
+  <footer>
+    <p class="openhours"> Showroom åbningstider:</p>
+    <p class="mandag"> Mandag-Lørdag: 09:00-18:00</p>
+    <p class="mandag"> Søndag: Lukket</p>
+    <p>Tlf: 12345678</p>
+    <br>
+    <p class="mandag">Kontakt: Empire@furniture.dk</p>
+    <p> Adresse: Holte hovedgade 123, 2600 Imaginationland</p>
+
+  </footer>
+
+</body>
+
+
+
+</html>
